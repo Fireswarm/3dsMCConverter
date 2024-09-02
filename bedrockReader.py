@@ -1,0 +1,3 @@
+def readBEFile(filepath):
+    pass
+
