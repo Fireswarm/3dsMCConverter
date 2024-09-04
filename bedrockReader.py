@@ -1,3 +1,5 @@
+import plyvel
+
 def convertNameBE(namePath):
     #needs to read name from file
     nameFile = open(namePath, "r")
@@ -18,15 +20,15 @@ def translateLevelDataBE(levelPath, oldLevelPath):
     levelFile = open(oldLevelPath, "rb")
     levelData.append(levelFile.read())
     levelFile.close()
-    
+
     return levelData
 
 def parseDB(dbFolder):
-    readDatabase = "A bunch of junk that we unpack"
-    return readDatabase
+    #db = plyvel.DB(dbFolder, create_if_missing=False)
+    return
 
 def readBEFile(filepath):
-    #Conver World Metadata
+    #Convert World Metadata
     convertNameBE(filepath+"/levelname.txt")
     translateLevelDataBE(filepath+"/level.dat", filepath+"level.dat_old")
 
